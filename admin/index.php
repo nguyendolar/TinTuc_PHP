@@ -28,62 +28,61 @@
             <main>
             <?php
         $sumbd = mysqli_query($connect, "SELECT COUNT(id) as 'tongso' 
-        FROM baidang 
+        FROM tintuc 
         ");
         $artinhnk = mysqli_fetch_array($sumbd);
         $sumkh = mysqli_query($connect, "SELECT COUNT(id) as 'tongso' 
-        FROM khachhang 
+        FROM nguoidung 
         ");
         $artinhkh = mysqli_fetch_array($sumkh);
         $sumsp = mysqli_query($connect, "SELECT COUNT(id) as 'tongso' 
-        FROM sanpham 
+        FROM gopy 
         ");
         $artinhsp = mysqli_fetch_array($sumsp);
-        // $sumtt = mysqli_query($connect, "SELECT SUM(tien) as 'tongtien' 
-        // FROM khachhang
-        // WHERE tinhtrangtien = 'Đã thanh toán' 
-        // ");
-        // $artinhtt = mysqli_fetch_array($sumtt);
+        $sumcd = mysqli_query($connect, "SELECT COUNT(id) as 'tongso' 
+        FROM chude 
+        ");
+        $artinhcd = mysqli_fetch_array($sumcd);
     ?>
                 <div class="container-fluid px-4">
 
                 <div class="row mt-4">
-        <div class="col-xl-4 col-md-6">
+        <div class="col-xl-3 col-md-6">
           <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Số lượng bài đăng : <strong> <?php echo $artinhnk['tongso'] ?></strong> </div>
+            <div class="card-body">Tổng số tin tức : <strong> <?php echo $artinhnk['tongso'] ?></strong> </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="baidang.php">Xem chi tiết</a>
+              <a class="small text-white stretched-link" href="tintuc.php">Xem chi tiết</a>
               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
         </div>
-        <div class="col-xl-4 col-md-6">
+        <div class="col-xl-3 col-md-6">
           <div class="card bg-warning text-white mb-4">
-            <div class="card-body">Số lượng khách hàng : <strong> <?php echo $artinhkh['tongso'] ?></strong> </div>
+            <div class="card-body">Số lượng người dùng : <strong> <?php echo $artinhkh['tongso'] ?></strong> </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="khachhang.php">Xem chi tiết</a>
+              <a class="small text-white stretched-link" href="nguoidung.php">Xem chi tiết</a>
               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
         </div>
-        <div class="col-xl-4 col-md-6">
+        <div class="col-xl-3 col-md-6">
           <div class="card bg-success text-white mb-4">
-            <div class="card-body">Số lượng sản phẩm : <strong> <?php echo $artinhsp['tongso'] ?></strong></div>
+            <div class="card-body">Tổng số góp ý: <strong> <?php echo $artinhsp['tongso'] ?></strong></div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="sanpham.php">Xem chi tiết</a>
+              <a class="small text-white stretched-link" href="gopy.php">Xem chi tiết</a>
               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
         </div>
-        <!-- <div class="col-xl-3 col-md-6">
+       <div class="col-xl-3 col-md-6">
           <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Doanh thu : <strong> <?php echo number_format($artinhtt['tongtien']) ?></strong> </div>
+            <div class="card-body">Tổng số chủ đề : <strong> <?php echo number_format($artinhcd['tongso']) ?></strong> </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="khachhang.php">Xem chi tiết</a>
+              <a class="small text-white stretched-link" href="chude.php">Xem chi tiết</a>
               <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
                 
