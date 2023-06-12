@@ -11,16 +11,8 @@
     <?php include('inc/menu.php')?>
         <div id="layoutSidenav_content">
             <main>
-                <?php
-                $dv = mysqli_query($connect, "SELECT * FROM loaibaidang
-                WHERE demuc = 'Dịch Vụ'");
-                $nkst = mysqli_query($connect, "SELECT * FROM loaibaidang
-                WHERE demuc = 'Nhật Ký Sáng Tạo'");
-                $tt = mysqli_query($connect, "SELECT * FROM loaibaidang
-                WHERE demuc = 'Tin Tức'");
-                ?>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Danh sách bài đăng</h1>
+                    <h1 class="mt-4">Danh sách tin tức</h1>
                     <div class="card mb-4">
                         <div class="card-header">
                         <?php if (isset($_GET['msg'])){
@@ -30,7 +22,7 @@
                             </div>
                             <?php } else { ?>
                                 <div class="alert alert-danger">
-                                <strong>Bài đăng đang được khách hàng book dịch vụ quảng cáo. Không thể xóa !</strong>
+                                <strong>Không thể xóa !</strong>
                             </div>
                             <?php }  ?> 
                             <?php }  ?>   
@@ -47,26 +39,17 @@
                                         <th>Tiêu đề</th>
                                         <th>Ảnh</th>
                                         <th>Nội dung</th>
-                                        <th>Loại bài đăng</th>
-                                        <th>Tác giả</th>
+                                        <th>Chủ đề</th>
                                         <th>Ngày đăng</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
-                                $idad = $_SESSION['id'];
-                                if($_SESSION['capdo'] == 1){
-                                    $query = "SELECT a.*,b.tenloaibaidang FROM baidang as a,loaibaidang as b
-                                    WHERE a.loaibaidang_id = b.id
+                               
+                                    $query = "SELECT a.*,b.ten FROM tintuc as a,chude as b
+                                    WHERE a.chude_id = b.id
                                     ORDER BY a.id DESC";
-                                }else{
-                                    $query = "SELECT a.*,b.tenloaibaidang FROM baidang as a,loaibaidang as b
-                                    WHERE a.loaibaidang_id = b.id
-                                    AND a.admin_id = $idad
-                                    ORDER BY a.id DESC";
-                                }
-                                    
                                     $result = mysqli_query($connect, $query);
                                     $stt = 1;
                                     while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -83,23 +66,17 @@
                                                 data-bs-target="#<?php echo $idModelDes ?>">
                                                 Xem</a>
                                         </td>
-                                        <td><?php echo $arUser["tenloaibaidang"] ?> </td>
-                                        <td><?php echo $arUser["tacgia"] ?></td>
-                                        <td><?php echo date("d-m-Y", strtotime($arUser["thoigiandang"])); ?></td>
+                                        <td><?php echo $arUser["ten"] ?> </td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngay"])); ?></td>
                                         <td style="width : 130px !important">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelEdit ?>">
                                                 Sửa
                                             </button>
-                                            <?php if($arUser["id"] == 1 || $arUser["id"] == 2 ) {
-
-                                            }else{ ?>
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelDel ?>">
                                                 Xóa
                                             </button>
-                                            <?php }?>
-                                            
                                             <!--Dele-->
                                             <div class="modal fade" id="<?php echo $idModelDel ?>" tabindex="-1"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,15 +89,15 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            Bài đăng : <?php echo $arUser["tieude"] ?>
-                                                            <form action="function.php" method="post">
+                                                            Tin tức : <?php echo $arUser["tieude"] ?>
+                                                            <form action="xuly.php" method="post">
                                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
                                                                 <div class="modal-footer" style="margin-top: 20px">
                                                                     <button style="width:100px" type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">
                                                                         Đóng
                                                                     </button>
-                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletebd"> Xóa</button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletett"> Xóa</button>
 
                                                                 </div>
 
@@ -159,43 +136,28 @@
                                         <div class="modal-dialog modal-xl">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Cập nhập</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="function.php" method="POST" enctype="multipart/form-data">
+                                                    <form action="xuly.php" method="POST" enctype="multipart/form-data">
                                                         <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
                                                         <div class="col">
                                                         <div class="row">
                                                         <div class="col-6">
-                                                            <label for="category-film"
-                                                                class="col-form-label">Loại bài đăng:</label>
-                                                                <select class="form-select" aria-label="Default select example" id="theloai" tabindex="8" name="loaibd" required>
-                                                                    <option value="<?php echo $arUser["loaibaidang_id"] ?>" selected><?php echo $arUser["tenloaibaidang"] ?></option>
-                                                                    <option value="" disabled="disabled" >Dịch vụ</option>
+                                                        <label for="category-film"
+                                                                class="col-form-label">Chủ đề:</label>
+                                                                <select class="form-select" aria-label="Default select example" id="theloai" tabindex="8" name="chude" required>
                                                                     <?php
-                                                                     $dvU = mysqli_query($connect, "SELECT * FROM loaibaidang
-                                                                     WHERE demuc = 'Dịch Vụ'");
-                                                                     while ($arDvU = mysqli_fetch_array($dvU, MYSQLI_ASSOC)) {
+                                                                     $lspud = mysqli_query($connect, "SELECT * FROM chude");
+                                                                     while ($arLspud = mysqli_fetch_array($lspud, MYSQLI_ASSOC)) {
+                                                                     if($arLspud['id'] == $arUser["chude_id"]){   
                                                                     ?>
-                                                                    <option value="<?php echo $arDvU['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arDvU['tenloaibaidang']; ?></option>
+                                                                    <option value="<?php echo $arLspud['id'] ?>" selected ><?php echo $arLspud['ten'] ?></option>
+                                                                    <?php } else{ ?>
+                                                                        <option value="<?php echo $arLspud['id'] ?>" ><?php echo $arLspud['ten'] ?></option>
                                                                     <?php } ?>
-                                                                    <option value="" disabled="disabled" >Nhật ký sáng tạo</option>
-                                                                    <?php
-                                                                    $nkstU = mysqli_query($connect, "SELECT * FROM loaibaidang
-                                                                    WHERE demuc = 'Nhật Ký Sáng Tạo'");
-                                                                     while ($arNkstU = mysqli_fetch_array($nkstU, MYSQLI_ASSOC)) {
-                                                                    ?>
-                                                                    <option value="<?php echo $arNkstU['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arNkstU['tenloaibaidang']; ?></option>
-                                                                    <?php } ?>
-                                                                    <option value="" disabled="disabled" >Tin tức</option>
-                                                                    <?php
-                                                                    $ttU = mysqli_query($connect, "SELECT * FROM loaibaidang
-                                                                    WHERE demuc = 'Tin Tức'");
-                                                                     while ($arTtU = mysqli_fetch_array($ttU, MYSQLI_ASSOC)) {
-                                                                    ?>
-                                                                    <option value="<?php echo $arTtU['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arTtU['tenloaibaidang']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                         </div>
@@ -207,15 +169,10 @@
                                                         </div>
                                                         </div>
                                                         <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-12">
                                                             <label for="category-film"
                                                                 class="col-form-label">Tiêu đề:</label>
                                                                 <input type="text" class="form-control" id="category-film" value="<?php echo $arUser["tieude"] ?>" name="tieude" required>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <label for="category-film"
-                                                                class="col-form-label">Tác giả:</label>
-                                                                <input type="text" class="form-control" id="category-film" value="<?php echo $arUser["tacgia"] ?>" name="tacgia" required>
                                                         </div>
                                                         </div>
                                                         <?php
@@ -232,7 +189,7 @@
                                                         <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Đóng</button>
-                                                    <button type="submit" class="btn btn-primary" name="editbd">Lưu</button>
+                                                    <button type="submit" class="btn btn-primary" name="edittt">Lưu</button>
                                                 </div>
                                                     </form>
                                                 </div>
@@ -253,31 +210,19 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="function.php" method="POST" enctype="multipart/form-data">
+                                                    <form action="xuly.php" method="POST" enctype="multipart/form-data">
                                                     <div class="col">
                                                         <div class="row">
                                                         <div class="col-6">
                                                             <label for="category-film"
-                                                                class="col-form-label">Loại bài đăng:</label>
-                                                                <select class="form-select" aria-label="Default select example" id="theloai" tabindex="8" name="loaibd" required>
-                                                                    <option value="" selected>Chọn loại bài đăng</option>
-                                                                    <option value="" disabled="disabled" >Dịch vụ</option>
+                                                                class="col-form-label">Chủ đề:</label>
+                                                                <select class="form-select" aria-label="Default select example" id="theloai" tabindex="8" name="chude" required>
+                                                                    <option value="" selected>Chọn chủ đề</option>
                                                                     <?php
-                                                                     while ($arDv = mysqli_fetch_array($dv, MYSQLI_ASSOC)) {
+                                                                     $lsp = mysqli_query($connect, "SELECT * FROM chude");
+                                                                     while ($arLsp = mysqli_fetch_array($lsp, MYSQLI_ASSOC)) {
                                                                     ?>
-                                                                    <option value="<?php echo $arDv['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arDv['tenloaibaidang']; ?></option>
-                                                                    <?php } ?>
-                                                                    <option value="" disabled="disabled" >Nhật ký sáng tạo</option>
-                                                                    <?php
-                                                                     while ($arNkst = mysqli_fetch_array($nkst, MYSQLI_ASSOC)) {
-                                                                    ?>
-                                                                    <option value="<?php echo $arNkst['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arNkst['tenloaibaidang']; ?></option>
-                                                                    <?php } ?>
-                                                                    <option value="" disabled="disabled" >Tin tức</option>
-                                                                    <?php
-                                                                     while ($arTt = mysqli_fetch_array($tt, MYSQLI_ASSOC)) {
-                                                                    ?>
-                                                                    <option value="<?php echo $arTt['id']; ?>" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $arTt['tenloaibaidang']; ?></option>
+                                                                    <option value="<?php echo $arLsp['id'] ?>" ><?php echo $arLsp['ten'] ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                         </div>
@@ -289,15 +234,10 @@
                                                         </div>
                                                         </div>
                                                         <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-12">
                                                             <label for="category-film"
                                                                 class="col-form-label">Tiêu đề:</label>
                                                                 <input type="text" class="form-control" id="category-film" name="tieude" required>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <label for="category-film"
-                                                                class="col-form-label">Tác giả:</label>
-                                                                <input type="text" class="form-control" id="category-film" name="tacgia" required>
                                                         </div>
                                                         </div>
                                                         <div class="row">
@@ -311,7 +251,7 @@
                                                         <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Đóng</button>
-                                                    <button type="submit" class="btn btn-primary" name="addbd">Lưu </button>
+                                                    <button type="submit" class="btn btn-primary" name="addtt">Lưu </button>
                                                 </div>
                                                     </form>
                                                 </div>

@@ -8,37 +8,25 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Bảng điều khiển
                         </a>
-                        <a class="nav-link" href="loaibaidang.php">
+                        <a class="nav-link" href="chude.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Loại bài đăng
+                            Chủ đề
                         </a>
-                        <a class="nav-link" href="baidang.php">
+                        <a class="nav-link" href="tintuc.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bài đăng
-                        </a>
-                        <a class="nav-link" href="loaisanpham.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Loại sản phẩm
-                        </a>
-                        <a class="nav-link" href="sanpham.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Sản phẩm
-                        </a>
-                        <a class="nav-link" href="khachhang.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Khách hàng
+                            Tin tức
                         </a>
                         <a class="nav-link" href="nguoidung.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Người dùng
                         </a>
-                        <a class="nav-link" href="binhluandanhgia.php">
+                        <a class="nav-link" href="binhluan.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bình luận đánh giá
+                            Bình luận
                         </a>
-                        <a class="nav-link" href="anh.php">
+                        <a class="nav-link" href="gopy.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Quản lý ảnh
+                            Góp ý
                         </a>
                     </div>
                 </div>

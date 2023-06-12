@@ -13,7 +13,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Danh sách người dùng</h1>
+                    <h1 class="mt-4">Danh sách bình luận</h1>
                     <div class="card mb-4">
                         <div class="card-header">
                         <?php if (isset($_GET['msg'])){
@@ -29,34 +29,32 @@
                                 <thead>
                                 <tr style="background-color : #6D6D6D">
                                         <th>STT</th>
-                                        <th>Họ tên</th>
-                                        <th>Email</th>
-                                        <th>Tài khoản</th>
-                                        <th>Mật khẩu</th>
-                                        <th>Vai trò</th>
+                                        <th>Người dùng</th>
+                                        <th>Tin tức</th>
+                                        <th>Bình luận</th>
+                                        <th>Ngày</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
-                                    $query = "SELECT *
-                                    FROM nguoidung
-                                    ORDER BY id DESC";
+                                    $query = "SELECT a.*,b.hoten,c.tieude
+                                    FROM binhluan as a, nguoidung as b, tintuc as c
+                                    WHERE a.nguoidung_id = b.id AND a.tintuc_id = c.id
+                                    ORDER BY a.id DESC";
                                     $result = mysqli_query($connect, $query);
                                     $stt = 1;
                                     while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                         $idModelDel = "exampleModalDel".$arUser["id"] ;
                                     ?>
                                     <tr>
-                                        <td><?php echo $stt ?></td>
-                                        <td><?php echo $arUser["hoten"] ?></td>
-                                        <td><?php echo $arUser["email"] ?></td>
-                                        <td><?php echo $arUser["taikhoan"] ?></td>
-                                        <td><?php echo $arUser["matkhau"] ?></td>
-                                        <td><?php echo $arUser["vaitro"] == 1 ? "Quản trị viên" : "Người dùng" ?></td>
+                                        <td style="width : 10px !important"><?php echo $stt ?></td>
+                                        <td style="width : 200px !important"><?php echo $arUser["hoten"] ?></td>
+                                        <td><?php echo $arUser["tieude"] ?></td>
+                                        <td><?php echo $arUser["noidung"] ?></td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngay"])); ?></td>
                                         <td>
-                                            <?php if($arUser["vaitro"] == 2){ ?>
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelDel ?>">
                                                 Xóa
                                             </button>
@@ -72,7 +70,7 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            Người dùng : <?php echo $arUser["hoten"] ?>
+                                                            Bình luận : <?php echo $arUser["noidung"] ?> . Của người dùng : <?php echo $arUser["hoten"] ?>
                                                             <form action="xuly.php" method="post">
                                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
                                                                 <div class="modal-footer" style="margin-top: 20px">
@@ -80,7 +78,7 @@
                                                                             data-bs-dismiss="modal">
                                                                         Đóng
                                                                     </button>
-                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletend"> Xóa</button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletebl"> Xóa</button>
 
                                                                 </div>
 
@@ -91,7 +89,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
                                             <!--Dele-->
                                         </td>
 

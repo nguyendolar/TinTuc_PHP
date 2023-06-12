@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +12,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Danh sách người dùng</h1>
+                    <h1 class="mt-4">Danh sách góp ý</h1>
                     <div class="card mb-4">
                         <div class="card-header">
                         <?php if (isset($_GET['msg'])){
@@ -29,18 +28,17 @@
                                 <thead>
                                 <tr style="background-color : #6D6D6D">
                                         <th>STT</th>
-                                        <th>Họ tên</th>
+                                        <th>Người gửi</th>
                                         <th>Email</th>
-                                        <th>Tài khoản</th>
-                                        <th>Mật khẩu</th>
-                                        <th>Vai trò</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Nội dung</th>
+                                        <th>Ngày gửi</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
-                                    $query = "SELECT *
-                                    FROM nguoidung
+                                    $query = "SELECT * FROM gopy
                                     ORDER BY id DESC";
                                     $result = mysqli_query($connect, $query);
                                     $stt = 1;
@@ -51,18 +49,17 @@
                                         <td><?php echo $stt ?></td>
                                         <td><?php echo $arUser["hoten"] ?></td>
                                         <td><?php echo $arUser["email"] ?></td>
-                                        <td><?php echo $arUser["taikhoan"] ?></td>
-                                        <td><?php echo $arUser["matkhau"] ?></td>
-                                        <td><?php echo $arUser["vaitro"] == 1 ? "Quản trị viên" : "Người dùng" ?></td>
-                                        <td>
-                                            <?php if($arUser["vaitro"] == 2){ ?>
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        <td><?php echo $arUser["tieude"] ?></td>
+                                        <td style="width : 300px !important"><?php echo $arUser["noidung"] ?></td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngay"])); ?></td>
+                                        <td style="width : 130px !important">
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelDel ?>">
                                                 Xóa
                                             </button>
                                             <!--Dele-->
                                             <div class="modal fade" id="<?php echo $idModelDel ?>" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -72,7 +69,7 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            Người dùng : <?php echo $arUser["hoten"] ?>
+                                                            Góp ý : <?php echo $arUser["tieude"] ?>
                                                             <form action="xuly.php" method="post">
                                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
                                                                 <div class="modal-footer" style="margin-top: 20px">
@@ -80,7 +77,7 @@
                                                                             data-bs-dismiss="modal">
                                                                         Đóng
                                                                     </button>
-                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletend"> Xóa</button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletegy"> Xóa</button>
 
                                                                 </div>
 
@@ -91,11 +88,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
                                             <!--Dele-->
                                         </td>
 
                                     </tr>
+                                    <!-- Modal Update-->
                                     <?php $stt++;} ?>
                                 </tbody>
                             </table>
@@ -106,6 +103,17 @@
             <?php include('inc/footer.php')?>
         </div>
     </div>
+    <script>
+    CKEDITOR.replace("editor");
+    </script>
+    <script>
+for (var i = 1; i < 200; i++) {
+    var name = "editor" + i
+    CKEDITOR.replace(name);
+
+}
+
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>

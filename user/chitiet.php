@@ -1,235 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>The News Paper - News &amp; Lifestyle Magazine Template</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico" />
-
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+<?php include('inc/head.php')?>
+</head>
 
   <body>
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-      <!-- Top Header Area -->
-      <div class="top-header-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div
-                class="top-header-content d-flex align-items-center justify-content-between"
-              >
-                <!-- Logo -->
-                <div class="logo">
-                  <a href="index.html"
-                    ><img src="img/core-img/logo.png" alt=""
-                  /></a>
-                </div>
-
-                <!-- Login Search Area -->
-                <div class="login-search-area d-flex align-items-center">
-                  <!-- Login -->
-                  <div class="login d-flex">
-                    <a href="#">Login</a>
-                    <a href="#">Register</a>
-                  </div>
-                  <!-- Search Form -->
-                  <div class="search-form">
-                    <form action="#" method="post">
-                      <input
-                        type="search"
-                        name="search"
-                        class="form-control"
-                        placeholder="Search"
-                      />
-                      <button type="submit">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navbar Area -->
-      <div class="newspaper-main-menu" id="stickyMenu">
-        <div class="classy-nav-container breakpoint-off">
-          <div class="container">
-            <!-- Menu -->
-            <nav
-              class="classy-navbar justify-content-between"
-              id="newspaperNav"
-            >
-              <!-- Logo -->
-              <div class="logo">
-                <a href="index.html"
-                  ><img src="img/core-img/logo.png" alt=""
-                /></a>
-              </div>
-
-              <!-- Navbar Toggler -->
-              <div class="classy-navbar-toggler">
-                <span class="navbarToggler"
-                  ><span></span><span></span><span></span
-                ></span>
-              </div>
-
-              <!-- Menu -->
-              <div class="classy-menu">
-                <!-- close btn -->
-                <div class="classycloseIcon">
-                  <div class="cross-wrap">
-                    <span class="top"></span><span class="bottom"></span>
-                  </div>
-                </div>
-
-                <!-- Nav Start -->
-                <div class="classynav">
-                  <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li>
-                      <a href="#">Pages</a>
-                      <ul class="dropdown">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="catagories-post.html">Catagories</a></li>
-                        <li><a href="single-post.html">Single Articles</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li>
-                          <a href="#">Dropdown</a>
-                          <ul class="dropdown">
-                            <li><a href="index.html">Home</a></li>
-                            <li>
-                              <a href="catagories-post.html">Catagories</a>
-                            </li>
-                            <li>
-                              <a href="single-post.html">Single Articles</a>
-                            </li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#">Mega Menu</a>
-                      <div class="megamenu">
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Catagories</li>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="catagories-post.html">Catagories</a></li>
-                          <li>
-                            <a href="single-post.html">Single Articles</a>
-                          </li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Catagories</li>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="catagories-post.html">Catagories</a></li>
-                          <li>
-                            <a href="single-post.html">Single Articles</a>
-                          </li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <ul class="single-mega cn-col-4">
-                          <li class="title">Catagories</li>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="catagories-post.html">Catagories</a></li>
-                          <li>
-                            <a href="single-post.html">Single Articles</a>
-                          </li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <div class="single-mega cn-col-4">
-                          <!-- Single Featured Post -->
-                          <div
-                            class="single-blog-post small-featured-post d-flex"
-                          >
-                            <div class="post-thumb">
-                              <a href="#"
-                                ><img src="img/bg-img/23.jpg" alt=""
-                              /></a>
-                            </div>
-                            <div class="post-data">
-                              <a href="#" class="post-catagory">Travel</a>
-                              <div class="post-meta">
-                                <a href="#" class="post-title">
-                                  <h6>
-                                    Pellentesque mattis arcu massa, nec
-                                    fringilla turpis eleifend id.
-                                  </h6>
-                                </a>
-                                <p class="post-date">
-                                  <span>7:00 AM</span> | <span>April 14</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Single Featured Post -->
-                          <div
-                            class="single-blog-post small-featured-post d-flex"
-                          >
-                            <div class="post-thumb">
-                              <a href="#"
-                                ><img src="img/bg-img/24.jpg" alt=""
-                              /></a>
-                            </div>
-                            <div class="post-data">
-                              <a href="#" class="post-catagory">Politics</a>
-                              <div class="post-meta">
-                                <a href="#" class="post-title">
-                                  <h6>
-                                    Augue semper congue sit amet ac sapien.
-                                    Fusce consequat.
-                                  </h6>
-                                </a>
-                                <p class="post-date">
-                                  <span>7:00 AM</span> | <span>April 14</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Breaking News</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                  </ul>
-                </div>
-                <!-- Nav End -->
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+    <?php include('inc/header.php')?>
     <!-- ##### Popular News Area Start ##### -->
+    <?php
+$id = $_GET["id"];
+$sql = "
+        SELECT a.*, b.ten 
+        FROM tintuc as a, chude as b
+        WHERE a.chude_id = b.id
+        AND a.id = '".$id."'
+    ";
+$query = mysqli_query($connect, $sql);
+$row = mysqli_fetch_array($query);
+?>
+<?php
+    if (isset($_GET['msg'])) {
+    ?>
+<div class="toast" data-delay="2000" style="position:fixed;top: 100PX; right: 10PX;z-index: 2000;width: 300px">
+    <script>
+        swal({
+            title: 'Bình luận thành công!',
+            icon: 'success',
+            timer: 3000,
+            buttons: true,
+            type: 'success'
+        })
+    </script>
+</div>
+    <?php } ?>
     <div class="popular-news-area section-padding-80-50">
       <div class="container">
         <div class="row">
@@ -244,72 +49,21 @@
                   <!-- Single Featured Post -->
                   <div class="single-blog-post featured-post single-post">
                     <div class="post-thumb">
-                      <a href="#"><img src="img/bg-img/25.jpg" alt="" /></a>
+                      <a href="#"><img style="width: 100%;height: 550px;" src="../admin/image/<?php echo $row['anh'] ?>" alt="" /></a>
                     </div>
                     <div class="post-data">
-                      <a href="#" class="post-catagory">Finance</a>
+                      <a href="#" class="post-catagory"><?php echo $row['ten'] ?></a>
                       <a href="#" class="post-title">
                         <h6>
-                          Financial news: A new company is born today at the
-                          stock market
+                        <?php echo $row['tieude'] ?>
                         </h6>
                       </a>
                       <div class="post-meta">
                         <p class="post-author">
-                          By <a href="#">Christinne Williams</a>
+                          Đăng lúc  <a><?php echo $row['ngay'] ?></a>
                         </p>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam eu metus sit amet odio sodales placerat. Sed
-                          varius leo ac leo fermentum, eu cursus nunc maximus.
-                          Integer convallis nisi nibh, et ornare neque
-                          ullamcorper ac. Nam id congue lectus, a venenatis
-                          massa. Maecenas justo libero, vulputate vel nunc id,
-                          blandit feugiat sem.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Pellentesque consectetur, purus imperdiet
-                          volutpat tincidunt, eros sem mollis quam, ut placerat
-                          urna neque at massa. Proin vitae pulvinar justo. Donec
-                          vel placerat enim, at ultricies risus. In posuere
-                          luctus sem, ac dapibus felis semper quis. Integer ex
-                          ante, semper at velit nec, ultrices aliquet diam.
-                          Donec gravida non metus blandit facilisis. Cras
-                          tincidunt, lorem aliquam molestie eleifend, libero dui
-                          volutpat dui, nec sodales massa libero ut metus.
-                          Mauris pretium elit ut dapibus consequat. Nam ut lorem
-                          nec sem dignissim gravida. Duis fringilla, augue eget
-                          lacinia tincidunt, neque leo maximus sem, sed
-                          tristique enim orci id quam.
-                        </p>
-                        <p>
-                          Donec turpis erat, scelerisque id euismod sit amet,
-                          fermentum vel dolor. Nulla facilisi. Sed pellentesque
-                          lectus et accumsan aliquam. Fusce lobortis cursus
-                          quam, id mattis sapien. Aliquam erat volutpat. Aliquam
-                          placerat, est quis sagittis tincidunt, ipsum eros
-                          posuere mi, ut finibus quam sem eget ex. Interdum et
-                          malesuada fames ac ante ipsum primis in faucibus.
-                          Donec commodo quis enim ac auctor. Ut et mollis felis,
-                          sit amet ultricies est. Suspendisse sed faucibus
-                          tortor.
-                        </p>
-                        <a href="#" class="related--post"
-                          >Related: Facebook announces changes to combat
-                          election meddling</a
-                        >
-                        <p>
-                          Donec turpis erat, scelerisque id euismod sit amet,
-                          fermentum vel dolor. Nulla facilisi. Sed pellentesque
-                          lectus et accu msan aliquam. Fusce lobortis cursus
-                          quam, id mattis sapien. Aliquam erat volutpat. Aliquam
-                          placerat, est quis sagi ttis tincidunt, ipsum eros
-                          posuere mi, ut finibus quam sem eget ex. Interdum et
-                          malesuada fames ac ante ipsum pr imis in faucibus.
-                          Donec commodo quis enim ac auctor. Ut et mollis felis,
-                          sit amet ultricies est. Suspendisse sed faucibus
-                          tortor.
+                        <?php echo $row['noidung'] ?>
                         </p>
                         <div
                           class="newspaper-post-like d-flex align-items-center justify-content-between"
@@ -334,63 +88,74 @@
 
                   <!-- Comment Area Start -->
                   <div class="comment_area clearfix">
-                    <h5 class="title">3 Comments</h5>
+                    <h5 class="title">Danh sách bình luận</h5>
 
                     <ol>
+                    <?php 
+                        $binhluan = "SELECT a.* , b.hoten
+                        FROM binhluan as a, nguoidung as b
+                        WHERE a.nguoidung_id = b.id AND a.tintuc_id = '".$id."'
+                        ORDER BY a.id DESC";
+                        $rsbl = mysqli_query($connect, $binhluan);
+                        while ($bluan = mysqli_fetch_array($rsbl, MYSQLI_ASSOC)) {
+                        ?>
                       <!-- Single Comment Area -->
                       <li class="single_comment_area">
                         <!-- Comment Content -->
                         <div class="comment-content d-flex">
                           <!-- Comment Author -->
                           <div class="comment-author">
-                            <img src="img/bg-img/30.jpg" alt="author" />
+                            <img src="https://cdn2.iconfinder.com/data/icons/blog-7/80/user_avatar_profile_login_button_account_member-512.png" alt="author" />
                           </div>
                           <!-- Comment Meta -->
                           <div class="comment-meta">
                             <a href="#" class="post-author"
-                              >Christian Williams</a
+                              ><?php echo $bluan['hoten'] ?></a
                             >
-                            <a href="#" class="post-date">April 15, 2018</a>
+                            <a href="#" class="post-date"><?php echo $bluan['ngay'] ?></a>
                             <p>
-                              Donec turpis erat, scelerisque id euismod sit
-                              amet, fermentum vel dolor. Nulla facilisi. Sed
-                              pellen tesque lectus et accu msan aliquam. Fusce
-                              lobortis cursus quam, id mattis sapien.
+                            <?php echo $bluan['noidung'] ?>
                             </p>
                           </div>
                         </div>
                       </li>
+                      <?php } ?>
                     </ol>
                   </div>
-
+                  <?php if (isset($_SESSION['taikhoan'])) { ?>
                   <div class="post-a-comment-area section-padding-80-0">
                     <h4>Bình luận của bạn</h4>
                     <!-- Reply Form -->
                     <div class="contact-form-area">
-                      <form action="#" method="post">
+                      <form action="xuly.php" method="post">
+                      <input type="hidden" value="<?php echo $_SESSION['id'];?>" name="idnguoidung">
+                      <input type="hidden" value="<?php echo $_GET["id"];?>" name="idbaidang">
                         <div class="row">
                           <div class="col-12">
                             <textarea
-                              name="message"
+                              name="noidung"
                               class="form-control"
                               id="message"
                               cols="30"
                               rows="10"
-                              placeholder="Message"
+                              placeholder="Nhập bình luận tại đây"
+                              required
                             ></textarea>
                           </div>
                           <div class="col-12 text-center">
                             <button
                               class="btn newspaper-btn mt-30 w-100"
                               type="submit"
+                              name="binhluan"
                             >
-                              Submit Comment
+                              Bình luận
                             </button>
                           </div>
                         </div>
                       </form>
                     </div>
                   </div>
+                  <?php } ?>
                 </div>
               </div>
             </div>
@@ -401,144 +166,7 @@
     <!-- ##### Popular News Area End ##### -->
 
     <!-- ##### Footer Add Area Start ##### -->
-    <div class="footer-add-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer-add">
-              <a href="#"><img src="img/bg-img/footer-add.gif" alt="" /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ##### Footer Add Area End ##### -->
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-      <!-- Main Footer Area -->
-      <div class="main-footer-area">
-        <div class="container">
-          <div class="row">
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="footer-widget-area mt-80">
-                <!-- Footer Logo -->
-                <div class="footer-logo">
-                  <a href="index.html"
-                    ><img src="img/core-img/logo.png" alt=""
-                  /></a>
-                </div>
-                <!-- List -->
-                <ul class="list">
-                  <li>
-                    <a href="mailto:contact@youremail.com"
-                      >contact@youremail.com</a
-                    >
-                  </li>
-                  <li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>
-                  <li>
-                    <a href="http://yoursitename.com">www.yoursitename.com</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-lg-2">
-              <div class="footer-widget-area mt-80">
-                <!-- Title -->
-                <h4 class="widget-title">Politics</h4>
-                <!-- List -->
-                <ul class="list">
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Markets</a></li>
-                  <li><a href="#">Tech</a></li>
-                  <li><a href="#">Luxury</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-4 col-lg-2">
-              <div class="footer-widget-area mt-80">
-                <!-- Title -->
-                <h4 class="widget-title">Featured</h4>
-                <!-- List -->
-                <ul class="list">
-                  <li><a href="#">Football</a></li>
-                  <li><a href="#">Golf</a></li>
-                  <li><a href="#">Tennis</a></li>
-                  <li><a href="#">Motorsport</a></li>
-                  <li><a href="#">Horseracing</a></li>
-                  <li><a href="#">Equestrian</a></li>
-                  <li><a href="#">Sailing</a></li>
-                  <li><a href="#">Skiing</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-4 col-lg-2">
-              <div class="footer-widget-area mt-80">
-                <!-- Title -->
-                <h4 class="widget-title">FAQ</h4>
-                <!-- List -->
-                <ul class="list">
-                  <li><a href="#">Aviation</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Traveller</a></li>
-                  <li><a href="#">Destinations</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Food/Drink</a></li>
-                  <li><a href="#">Hotels</a></li>
-                  <li><a href="#">Partner Hotels</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-4 col-lg-2">
-              <div class="footer-widget-area mt-80">
-                <!-- Title -->
-                <h4 class="widget-title">+More</h4>
-                <!-- List -->
-                <ul class="list">
-                  <li><a href="#">Fashion</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Architecture</a></li>
-                  <li><a href="#">Arts</a></li>
-                  <li><a href="#">Autos</a></li>
-                  <li><a href="#">Luxury</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Footer Area -->
-      <div class="bottom-footer-area">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12">
-              <!-- Copywrite -->
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                All rights reserved | This template is made with
-                <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php include('inc/footer.php')?>
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Files ##### -->

@@ -5,19 +5,21 @@
 <head>
 <?php include('inc/head.php')?>
 </head>
-<?php 
+        <?php
     if (isset($_GET['msg'])) {
-        echo "
-                    <script>
-                        function Redirect() {
-                        window.location = 'index.php';
-                        }
-                        alert('Đăng nhập thành công !') 
-                        Redirect()
-                    </script>
-                    ";
-    }
     ?>
+<div class="toast" data-delay="2000" style="position:fixed;top: 100PX; right: 10PX;z-index: 2000;width: 300px">
+    <script>
+        swal({
+            title: 'Đăng nhập thành công!',
+            icon: 'success',
+            timer: 3000,
+            buttons: true,
+            type: 'success'
+        })
+    </script>
+</div>
+    <?php } ?>
 <body class="sb-nav-fixed">
 <?php include('inc/header.php')?>
     <div id="layoutSidenav">

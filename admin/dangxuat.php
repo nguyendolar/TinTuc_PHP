@@ -2,6 +2,6 @@
 if (isset($_SESSION['taikhoanadmin'])){
 unset($_SESSION['taikhoanadmin']); // xóa session login
 session_destroy();
-header("Location: login.php");
+header("Location: dangnhap.php");
 }
 ?>
