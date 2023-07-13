@@ -31,7 +31,11 @@ if (isset($_SESSION['taikhoanadmin'])) {
     </script>
 </div>
     <?php } ?>
-    <body class="bg-primary">
+    <body class="bg-primary" style="
+        background-image: url(https://i.ytimg.com/vi/5oaWWQFHuRQ/maxresdefault.jpg?sqp\u003d-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGBkgICh_MA8\u003d\u0026rs\u003dAOn4CLAjSPXlOrxJ3x95rKPdDXcxv8pAsg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -39,7 +43,7 @@ if (isset($_SESSION['taikhoanadmin'])) {
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Quản Trị</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">HỆ THỐNG WEBSITE TIN TỨC</h3></div>
                                     <div class="card-body">
                                         <form action="xuly.php" method="POST">
                                             <div class="form-floating mb-3">

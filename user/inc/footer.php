@@ -28,9 +28,9 @@
                             </div>
                             <!-- List -->
                             <ul class="list">
-                                <li><a href="mailto:contact@youremail.com">contact@youremail.com</a></li>
-                                <li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>
-                                <li><a href="http://yoursitename.com">www.yoursitename.com</a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><img style="width : 150px;height : 60px" src="https://fptshop.com.vn/Uploads/Originals/2017/8/20//636388366703536000_tron-bo-icon-the-hien-cam-xuc-tren-facebook-cover.jpg"/></a></li>
+                                <li><a href="https://www.youtube.com/" target="_blank"><img style="width : 150px;height : 60px" src="https://vudigital.co/wp-content/uploads/2021/12/logo-youtube-lich-su-va-y-nghia-thu-vi-cua-nen-tang-phat-video-tu-2005-9.webp"/></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><img style="width : 150px;height : 60px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxg4-TLww4hkPSMi7F86EsPx1lEsQLsdh8hBaoynMs9nypsXV_Pvn-tW7vJyFWJGk6nj8&usqp=CAU"/></a></li>
                             </ul>
                         </div>
                     </div>

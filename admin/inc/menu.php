@@ -3,7 +3,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-
+                        <img src="https://cdn.icon-icons.com/icons2/2560/PNG/512/man_avatar_user_account_confirm_approve_complete_icon_153151.png" />
                         <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Bảng điều khiển

@@ -24,7 +24,7 @@
 <?php include('inc/header.php')?>
     <div id="layoutSidenav">
     <?php include('inc/menu.php')?>
-        <div id="layoutSidenav_content">
+        <div id="layoutSidenav_content" >
             <main>
             <?php
         $sumbd = mysqli_query($connect, "SELECT COUNT(id) as 'tongso' 

@@ -44,12 +44,12 @@ $row = mysqli_fetch_array($query);
             </div>
             <div class="row">
               <!-- Single Post -->
-              <div class="col-12 col-lg-12">
+              <div class="col-12 col-lg-8">
                 <div class="blog-posts-area">
                   <!-- Single Featured Post -->
                   <div class="single-blog-post featured-post single-post">
                     <div class="post-thumb">
-                      <a href="#"><img style="width: 100%;height: 550px;" src="../admin/image/<?php echo $row['anh'] ?>" alt="" /></a>
+                      <a href="#"><img style="width: 100%;height: 400px;" src="../admin/image/<?php echo $row['anh'] ?>" alt="" /></a>
                     </div>
                     <div class="post-data">
                       <a href="#" class="post-catagory"><?php echo $row['ten'] ?></a>
@@ -158,6 +158,37 @@ $row = mysqli_fetch_array($query);
                   <?php } ?>
                 </div>
               </div>
+              <div class="col-12 col-lg-4">
+                    <div class="blog-sidebar-area">
+
+                        <!-- Latest Posts Widget -->
+                        <div class="latest-posts-widget mb-50">
+                        <?php 
+                        $tintuc = "SELECT a.*, b.ten 
+                        FROM tintuc as a, chude as b
+                        WHERE a.chude_id = b.id
+                        AND a.id != '".$id."' ORDER BY a.id DESC ";
+                        $resultbd = mysqli_query($connect, $tintuc);
+                        while ($bd = mysqli_fetch_array($resultbd, MYSQLI_ASSOC)) {
+                        ?>
+                            <!-- Single Featured Post -->
+                            <div class="single-blog-post small-featured-post d-flex">
+                                <div class="post-thumb">
+                                    <a href="chitiet.php?id=<?php echo $bd['id'] ?>"><img src="../admin/image/<?php echo $bd['anh'] ?>" alt=""></a>
+                                </div>
+                                <div class="post-data">
+                                    <a href="chude.php?id=<?php echo $bd['chude_id'] ?>" class="post-catagory"><?php echo $bd['ten'] ?></a>
+                                    <div class="post-meta">
+                                        <a href="chitiet.php?id=<?php echo $bd['id'] ?>" class="post-title">
+                                            <h6><?php echo $bd['tieude'] ?></h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
